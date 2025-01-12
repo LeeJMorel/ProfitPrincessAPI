@@ -4,6 +4,8 @@ from config import API_KEY
 import csv
 from urllib.parse import unquote
 import json
+from flask_cors import CORS
+CORS(app)  # Enable CORS for all routes
 
 """
 This app is designed for low user count as it retrieves the income statements 
