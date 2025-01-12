@@ -21,7 +21,7 @@ Filters and sorting are individual methods for future maintainability and testin
 """
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "https://leejmorel.github.io/ProfitPrincess/"}})
+CORS(app)
 
 
 BASE_URL = "https://financialmodelingprep.com"
@@ -43,6 +43,11 @@ def load_company_profiles():
         
     if not bulk_profiles:
         fetch_profiles()
+
+@app.route('/', methods=['GET'])
+def default_route():
+    return jsonify({"message": "API is up and running!"}), 200
+
 
 def fetch_profiles():
     """
