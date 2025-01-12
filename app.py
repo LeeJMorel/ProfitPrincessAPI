@@ -21,7 +21,8 @@ Filters and sorting are individual methods for future maintainability and testin
 """
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app, resources={r"/api/*": {"origins": "https://leejmorel.github.io/ProfitPrincess/"}})
+
 
 BASE_URL = "https://financialmodelingprep.com"
 
