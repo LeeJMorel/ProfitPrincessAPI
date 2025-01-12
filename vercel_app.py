@@ -5,7 +5,6 @@ import csv
 from urllib.parse import unquote
 import json
 from flask_cors import CORS
-CORS(app)  # Enable CORS for all routes
 
 """
 This app is designed for low user count as it retrieves the income statements 
@@ -22,6 +21,7 @@ Filters and sorting are individual methods for future maintainability and testin
 """
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 BASE_URL = "https://financialmodelingprep.com"
 
@@ -247,4 +247,4 @@ def filter_sort_income():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
