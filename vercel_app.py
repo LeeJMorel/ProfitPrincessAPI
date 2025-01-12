@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 import requests
-from flask_cors import CORS
 from config import API_KEY
 import csv
 from urllib.parse import unquote
@@ -21,9 +20,6 @@ Filters and sorting are individual methods for future maintainability and testin
 """
 
 app = Flask(__name__)
-
-# Enable CORS for all route, should be removed for launch, security risk
-CORS(app)
 
 BASE_URL = "https://financialmodelingprep.com"
 
